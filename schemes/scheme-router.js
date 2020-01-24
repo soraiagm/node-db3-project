@@ -4,6 +4,8 @@ const Schemes = require('./scheme-model.js');
 
 const router = express.Router();
 
+
+// IT'S WORKING //
 router.get('/', (req, res) => {
   Schemes.find()
   .then(schemes => {
@@ -14,6 +16,7 @@ router.get('/', (req, res) => {
   });
 });
 
+// IT'S WORKING //
 router.get('/:id', (req, res) => {
   const { id } = req.params;
 
@@ -29,6 +32,8 @@ router.get('/:id', (req, res) => {
     res.status(500).json({ message: 'Failed to get schemes' });
   });
 });
+
+
 
 router.get('/:id/steps', (req, res) => {
   const { id } = req.params;
@@ -46,6 +51,7 @@ router.get('/:id/steps', (req, res) => {
   });
 });
 
+// THIS IS WORKING BUT IT'S RETURNING ERROR MESSAGE //
 router.post('/', (req, res) => {
   const schemeData = req.body;
 
@@ -78,6 +84,8 @@ router.post('/:id/steps', (req, res) => {
   });
 });
 
+
+// IT'S WORKING //
 router.put('/:id', (req, res) => {
   const { id } = req.params;
   const changes = req.body;
@@ -98,6 +106,8 @@ router.put('/:id', (req, res) => {
   });
 });
 
+
+// IT'S WORKING // 
 router.delete('/:id', (req, res) => {
   const { id } = req.params;
 
